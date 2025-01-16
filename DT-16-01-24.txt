@@ -57,6 +57,85 @@ void revStack(stack<int>&st){
 
 
 
+3. LONGEST SUBARRAY WITH SUM <= k
+
+expand and srink method…
+TC->O(N+N)
+SC->O(1)
+
+void lngSub(vector<int>&arr,int k){
+	int l=0;
+	int r=0;
+	int sum =0;
+	int maxi = INT_MIN;
+
+	while(r<n){
+		sum+=arr[r];
+
+		while(sum>k){
+			sum-=arr[l];
+			l++;
+		}
+		if(sum<=k){
+			maxi = max(maxi,r-l+1);
+ 		}
+ 		
+		r++;
+	}
+
+	return maxi;
+} 
+
+
+4. MAXIMUN POINT OBTAIN FROM CARD
+
+TC-> O(2 X K)
+SC-> O(1)
+
+void maxPoint(vector<int>&point,int k){
+	int lsum = 0;
+	int rsum=0;
+	int maxi = INT_MIN;
+	for(int i=0;i<k-1;i++){
+		lsum+=arr[i];
+	}
+	maxi = lsum;
+	int right=n-1;
+	for(int i=k-1;i>=0;i–){
+		lsum-=arr[i];
+		rsum +=arr[right];
+		int total = lsum+rsum;
+ 		maxi = max(maxi,total);
+		right–;
+	}
+
+	retunr maxi;
+
+}
+
+
+
+5. Find longest substring which can have no more than k distinct char.
+
+input - abbaccdabba  k =3;
+void lngSub(string s){
+	int i=0;
+	int j=0;
+	vector<char>mp(26,0);
+	while(j<=s.size()){
+		mp[j]++;
+		bool flag = true;
+		for(int i=0;i<26;i++){
+			if(mp[i]>k){
+				flag = fasle;
+				break;
+			}
+		}
+
+
+
+	}	
+}
 
 
 

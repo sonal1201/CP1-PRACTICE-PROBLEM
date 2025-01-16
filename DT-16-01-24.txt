@@ -30,18 +30,81 @@ int maxiSub(vector<int>&arr){
 2.Given a stack reverse the stack;
 recusion method;
 
-int revStack(stack<int>&st){s
+void insertAtbuttom(stack<int>&st,int topEle){
+	if(st.empty()){
+		st.push(topEle);
+	}
+	int top = st.top();
+	st.pop();
+	insertAtbuttom(st,topEle);
+	st.push(top);
+}
+
+void revStack(stack<int>&st){
 
 	if(st.empty()){
 		return;
 	}
 
-	int top = st.top();
+	int topEle = st.top();
 	st.pop();
 
 	revStac(st);
-	st.push(st.top());
-	
+	insertAtbuttom(st,topEle);	
 		
 	
 }	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

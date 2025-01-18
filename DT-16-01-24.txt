@@ -115,29 +115,6 @@ void maxPoint(vector<int>&point,int k){
 
 
 
-5. Find longest substring which can have no more than k distinct char.
-
-input - abbaccdabba  k =3;
-void lngSub(string s){
-	int i=0;
-	int j=0;
-	vector<char>mp(26,0);
-	while(j<=s.size()){
-		mp[j]++;
-		bool flag = true;
-		for(int i=0;i<26;i++){
-			if(mp[i]>k){
-				flag = fasle;
-				break;
-			}
-		}
-
-
-
-	}	
-}
-
-
 
 
 
